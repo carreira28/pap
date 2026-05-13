@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Repor Stock</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="title">Repor Stock</h2>
+        <form method="POST" action="/repor_stock">
+            <div class="form-group">
+                <label for="produto">Produto</label>
+                <select class="form-control login-input" id="produto" name="produto" required>
+                    <option value="">Selecione um produto</option>
+                    {% for prod in produtos %}
+                    <option value="{{ prod.nome }}">{{ prod.nome }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Nova Quantidade</label>
+                <input type="number" class="form-control login-input" id="quantidade" name="quantidade" min="0" required>
+            </div>
+            <button type="submit" class="btn-start">Repor</button>
+        </form>
+        <br>
+        <a href="/stock" class="btn-start" aria-label="Voltar à página de stock">Voltar</a>
+    </div>
+</body>
+</html>

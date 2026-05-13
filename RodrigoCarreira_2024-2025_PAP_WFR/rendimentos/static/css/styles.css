@@ -1,0 +1,526 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  background-color: #222;
+  padding: 10%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  opacity: 0;
+  transform: translateY(-5%);
+  animation: slideDown 1.5s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo i {
+  font-size: 5%;
+  color: #e2010f;
+}
+
+.title {
+  font-size: 150%;
+  font-weight: 700;
+  margin-bottom: 5%;
+  color: #e2010f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.content {
+  font-size: 3.5vw;
+  margin-bottom: 5%;
+}
+
+.btn-start {
+  display: block;
+  width: 100%;
+  background-color: #e2010f;
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  transition: background 0.3s;
+}
+
+.btn-start:hover {
+  background-color: #e2010f;
+}
+
+/* Estilos para mensagens de alerta */
+.alert-container {
+  margin-bottom: 1.5rem;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.alert-success {
+  background-color: #28a745;
+}
+
+.alert-danger {
+  background-color: #dc3545;
+}
+
+.form-group h3 {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form-group a {
+  color: #e2010f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-group a:hover {
+  text-decoration: underline;
+}
+.container {
+  background-color: #222;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 350px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #e2010f;
+}
+
+/* Formulário de login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #bbb;
+}
+
+.login-button {
+  background-color: #e2010f;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-button:hover {
+  background-color: #e2010f;
+}
+
+.logo-img {
+  width: 60%; /* Tamanho reduzido da imagem */
+  display: block;
+  margin: 0 auto;
+}
+
+
+.top-bar {
+  width: 100%;
+  height: 80px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Nome do usuário no canto superior direito */
+.user-name {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Estilizando o nome do usuário */
+.user-name i {
+  margin-right: 5px;
+  color: #e2010f;
+}
+
+/* Para evitar que o conteúdo fique escondido atrás da barra */
+body {
+  padding-top: 6%;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.container-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* Estilos para o container dos botões dos meses */
+.container-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas para telas maiores */
+  gap: 25px; /* Espaçamento entre os botões */
+  justify-content: center;
+  padding: 30px; /* Espaçamento ao redor da lista de botões */
+  max-width: 1200px; /* Largura máxima do container */
+  margin: 0 auto; /* Centraliza o container */
+}
+
+.meses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre os botões */
+  max-width: 400%; /* Ajusta o tamanho máximo */
+  margin: 0 auto; /* Centraliza */
+}
+
+.mes-botao {
+  height: 50px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.mes-botao {
+  text-decoration: none;
+}
+
+.mes-botao:focus {
+  outline: none;
+}
+
+.mes-botao:hover {
+  transform: scale(1.1);
+}
+
+/* Para telas menores que 600px (mobile) */
+@media (max-width: 600px) {
+  .meses-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mes-botao {
+    width: 120%; /* Botões ocupam quase toda a largura */
+  }
+}
+
+/* Para telas maiores que 768px (tablets e desktops pequenos) */
+@media (min-width: 768px) {
+  .meses-container {
+    max-width: 500px; /* Aumenta um pouco o tamanho */
+  }
+
+  .mes-botao {
+    width: 140px; /* Botões um pouco maiores */
+  }
+}
+
+/* Para telas muito grandes (acima de 1024px) */
+@media (min-width: 1024px) {
+  .meses-container {
+    max-width: 600px;
+  }
+
+  .mes-botao {
+    width: 150px;
+  }
+}
+
+/* Título da página */
+.question {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e2010f;
+  margin-bottom: 20px;
+}
+
+.question-bold {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e2010f;
+  margin-bottom: 10px;
+}
+
+/* Estilo dos formulários */
+form {
+  background-color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-size: 16px;
+  color: #ccc;
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input[type="number"], form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+form button {
+  width: 100%;
+  background-color: #e2010f;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #d1000a;
+}
+
+/* Estilo das tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #444;
+}
+
+table th {
+  background-color: #333;
+  color: #e2010f;
+}
+
+table td {
+  background-color: #444;
+  color: #fff;
+}
+.containeri {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 40%;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(-100%); /* Começa fora da tela */
+  position: absolute; /* Para se esticar a partir do topo da página */
+  top: 0; /* Fica no topo da página */
+  left: 28%; /* Centraliza o contêiner horizontalmente */
+  transform: translateX(-20%) translateY(-100%); /* Centraliza e começa fora da tela */
+  animation: slideDown 1.5s ease forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*scroll*/
+
+.scroll-containeru {
+  width: 100%; /* Faz o container ocupar toda a largura do site */
+  overflow-x: auto; /* Adiciona scroll horizontal */
+  overflow-y: hidden; /* Desabilita o scroll vertical */
+  white-space: nowrap; /* Impede quebra de linha para conteúdo longo */
+  padding: 10px 0; /* Espaçamento interno */
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.containeri {
+  max-height: 100vh; /* Limita a altura da div principal para o tamanho da tela */
+  overflow-y: scroll; /* Adiciona o scroll quando o conteúdo ultrapassar a altura da tela */
+  padding: 20px;
+}
+
+.btn-stock {
+  margin-right: 15px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #e2010f;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-stock:hover {
+  background-color: #c2000f;
+}
+
+.sc {
+  max-height: 100vh; /* Limita a altura da div principal para o tamanho da tela */
+  overflow-y: scroll; /* Adiciona o scroll quando o conteúdo ultrapassar a altura da tela */
+  padding: 20px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 20px;
+}
+.table {
+  width: 90%;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.table thead {
+  background-color: #343a40;
+  color: white;
+}
+
+.containere {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.containeru {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 1.5s ease forwards;
+}
+
+
+@keyframes slideDown {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Adicione isto ao seu arquivo CSS */
+#despesasTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #333;
+  color: white;
+}
+
+#despesasTable th, #despesasTable td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #444;
+}
+
+#despesasTable th {
+  background-color: #e2010f;
+  color: white;
+  font-weight: 600;
+}
+
+#despesasTable tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+
+.despesas-section {
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+}

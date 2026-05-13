@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Utilizador</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2 class="login-title text-center">Adicionar Utilizador</h2>
+    <form method="POST" action="{{ url_for('nova_conta') }}" class="login-form">
+        <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Utilizador" required class="login-input">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="password" id="password" name="password" placeholder="Password" required class="login-input">
+        </div>
+        <br>
+        <button type="submit" class="login-button">Adicionar</button>
+    </form>
+    <a href="/login" class="btn-start">Voltar</a>
+</div>
+</body>
+</html>

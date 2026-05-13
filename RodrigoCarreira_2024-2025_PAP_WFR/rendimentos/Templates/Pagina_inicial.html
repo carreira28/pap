@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro - Meses do Ano</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+        <div class="top-bar">
+        <div class="button-group">
+            {% if session['cargo'] == 'Admin' %}
+                <a href="/categorias" class="btn-start" aria-label="Categorias">Categorias</a>
+            {% endif %}
+        </div>
+        <div class="user-name">
+            {{ nome }}
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="sc">
+            <div class="meses-container">
+                <a href="/mes/1" class="mes-botao">Janeiro</a>
+                <a href="/mes/2" class="mes-botao">Fevereiro</a>
+                <a href="/mes/3" class="mes-botao">Março</a>
+                <a href="/mes/4" class="mes-botao">Abril</a>
+                <a href="/mes/5" class="mes-botao">Maio</a>
+                <a href="/mes/6" class="mes-botao">Junho</a>
+                <a href="/mes/7" class="mes-botao">Julho</a>
+                <a href="/mes/8" class="mes-botao">Agosto</a>
+                <a href="/mes/9" class="mes-botao">Setembro</a>
+                <a href="/mes/10" class="mes-botao">Outubro</a>
+                <a href="/mes/11" class="mes-botao">Novembro</a>
+                <a href="/mes/12" class="mes-botao">Dezembro</a>
+            </div>
+    </div>
+        <div class="button-group">
+            <a href="/despesas_anuais"class="btn-start" aria-label="Despesas Anuais">Despesas Anuais</a>
+            <a href="/" class="btn-start" aria-label="Voltar">VOLTAR</a>
+        </div>
+</body>
+</html>

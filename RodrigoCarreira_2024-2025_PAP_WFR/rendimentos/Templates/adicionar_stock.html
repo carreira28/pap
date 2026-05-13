@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Stock</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="title">Adicionar Stock</h2>
+        <form method="POST" action="/adicionar_stock">
+            <div class="form-group">
+                <label for="produto">Nome do Produto</label>
+                <input type="text" class="form-control login-input" id="produto" name="produto" required>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" class="form-control login-input" id="quantidade" name="quantidade" required min="0">
+            </div>
+            <button type="submit" class="btn-start">Adicionar</button>
+        </form>
+        <br>
+        <a href="/stock" class="btn-start" aria-label="Iniciar Simulação">Voltar</a>
+    </div>
+</body>
+</html>

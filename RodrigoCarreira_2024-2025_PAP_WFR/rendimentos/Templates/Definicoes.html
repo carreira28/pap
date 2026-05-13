@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="containeri">
+    <h2 class="title">Gerenciar Cargos</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Utilizador</th>
+                <th>Cargo Atual</th>
+                <th>Novo Cargo</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in utilizadores %}
+            <tr>
+                <td>{{ user.utilizador }}</td>
+                <td>{{ user.cargo }}</td>
+                <td>
+                    <form method="POST" action="/definicoes">
+                        <input type="hidden" name="id_utilizador" value="{{ user.idutilizador }}">
+                        <select name="cargo" class="form-control">
+                            <option value="Admin" {% if user.cargo == 'Admin' %}selected{% endif %}>Admin</option>
+                            <option value="Utilizador" {% if user.cargo == 'Utilizador' %}selected{% endif %}>Utilizador</option>
+                        </select>
+                </td>
+                <td>
+                    <button class="btn btn-success d-flex align-items-center">
+                        <i class="bi bi-person-check-fill"></i>
+                        <span class="ml-2">Atualizar</span>
+                    </button>
+                    
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="btn-start" aria-label="Iniciar Simulação">Voltar</a>
+</div>
+</body>
+</html>

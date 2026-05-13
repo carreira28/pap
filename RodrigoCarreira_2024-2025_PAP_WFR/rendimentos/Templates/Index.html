@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="">
+        <div class="title">
+            <img src="{{ url_for('static', filename=imagem_logo) }}" alt="Ícone Simulador" class="logo-img">
+        </div>
+        <br>
+        <div class="title">
+            {{ titulo }} <br>
+        </div>
+        <br>
+        <a href="/pagina_inicial" class="btn-start" aria-label="Iniciar Simulação">Gestor Pessoal</a>
+        <a href="/stock" class="btn-start" aria-label="Iniciar Simulação">Gestor Empresarial</a>
+        {% if session['cargo'] == 'Admin' %}
+        <a href="/definicoes" class="btn-start" aria-label="Ver DEFINIÇÕES">
+            <img src="https://img.icons8.com/ios-filled/24/ffffff/settings.png" alt="Ícone Definições" style="vertical-align: middle;"> Definições
+        </a>
+        <a href="/editar_site" class="btn-start">Editar Site</a>
+        {% endif %}
+        <a href="/logout" class="btn-start" aria-label="Fazer Logout">Logout</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Categoria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="title">Editar Categoria</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nome_categoria">Nome da Categoria</label>
+            <input type="text" class="form-control login-input" name="nome_categoria" value="{{ categoria.nome_categoria }}" required>
+        </div>
+        <button type="submit" class="btn-start">Salvar Alterações</button>
+    </form>
+    <br>
+    <a href="/categorias" class="btn-start" aria-label="Voltar">Voltar</a>
+</div>
+</body>
+</html>

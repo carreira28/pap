@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Categoria</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="title">Adicionar Nova Categoria</h2>
+    <form method="POST">
+        <div class="form-group">
+            <label for="nome_categoria">Nome da Categoria</label>
+            <input type="text" class="form-control login-input" name="nome_categoria" required>
+        </div>
+        <button type="submit" class="btn-start">Adicionar Categoria</button>
+    </form>
+    <br>
+    <a href="/categorias" class="btn-start" aria-label="Voltar">Voltar</a>
+</div>
+</body>
+</html>

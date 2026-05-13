@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+    <div class="containeri">
+
+        <div class="question">Gestão Financeira - {{ nome_mes }}</div>
+        <div class="question-bold">Adicionar Rendimento</div>
+        <form action="/adicionar_rendimento" method="POST">
+            <input type="hidden" name="mes" value="{{ mes }}">
+            <label>Valor:</label>
+            <input type="number" name="valor" step="0.01" required>
+            <select name="moeda">
+                <option value="€">Euro (€)</option>
+            </select>
+            <button type="submit">Adicionar</button>
+        </form>        
+        </tr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Rendimentos</th>
+                </tr>
+            </thead> 
+            <tbody>
+                {% for rendimento in rendimentos %}
+                    <tr>
+                        <td>{{ rendimento.valor }} {{ rendimento.moeda }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Sem rendimentos</td>
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+        <br>
+        <h2>Adicionar Despesa</h2>
+        <form action="/adicionar_despesa" method="POST">
+            <input type="hidden" name="mes" value="{{ mes }}">
+            
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" name="idsubcategoria" required>
+                <option value="">Selecione uma categoria</option>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria.idcategoria }}">{{ categoria.nome_categoria }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="valor">Valor:</label>
+            <input type="number" name="valor" step="0.01" required>
+        
+            <label for="moeda">Moeda:</label>
+            <select name="moeda">
+                <option value="€">Euro (€)</option>
+            </select>
+        
+            <button type="submit">Adicionar</button>
+        </form>
+        <br>
+        <h2>Despesas do Mês</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Despesas</th>
+                    <th>Valor</th>
+                </tr>
+            </thead> 
+            <tbody>
+                {% for despesa in despesas %}
+                    <tr>
+                        <td>{{ despesa.nome_categoria }}</td>
+                        <td>{{ despesa.valor }} {{ despesa.moeda }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+        <br>
+        <a href="/exportar_pdf/{{ mes }}" class="btn-start">Exportar</a>
+        <a href="/pagina_inicial" class="btn-start" aria-activedescendant="Voltar">Voltar</a>
+        </div>
+    </div>
+    </div>
+    </body>
+    </html>

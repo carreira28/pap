@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="containeru">
+        <br>
+        <a href="/adicionar_categoria" class="btn-start" aria-label="Adicionar Categoria">Adicionar Categoria</a>
+        <h2>Categorias</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in categorias %}
+                <tr>
+                    <td>{{ categoria.nome_categoria }}</td>
+                    <td>
+                        <a href="/editar_categoria/{{ categoria.idcategoria }}" >Editar</a>
+                        <a href="/eliminar_categoria/{{ categoria.idcategoria }}" onclick="return confirm('Tem certeza que deseja eliminar?');">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/pagina_inicial" class="btn-start" aria-label="Voltar">Voltar</a>
+    </div>
+    </body>
+    </html>
